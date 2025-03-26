@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Movie Genre Predictor</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #2c2c2c;
+            color: white;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            padding: 20px;
+            max-width: 600px;
+            margin: auto;
+        }
+        input, select, button {
+            display: block;
+            margin: 10px 0;
+            padding: 10px;
+            width: 100%;
+            border: none;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #6c63ff;
+            color: white;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #5751d9;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Movie Genre Predictor</h1>
+        <form method="POST" action="/predict/">
+            {% csrf_token %}
+            <label for="lead_actor">Lead Actor:</label>
+            <input type="text" id="lead_actor" name="lead_actor" required>
+            
+            <label for="director">Director:</label>
+            <input type="text" id="director" name="director" required>
+            
+            <label for="keyword_1">Keyword 1:</label>
+            <input type="text" id="keyword_1" name="keyword_1" required>
+            
+            <label for="keyword_2">Keyword 2:</label>
+            <input type="text" id="keyword_2" name="keyword_2" required>
+            
+            <label for="keyword_3">Keyword 3:</label>
+            <input type="text" id="keyword_3" name="keyword_3" required>
+            
+            <button type="submit">Predict Genre</button>
+        </form>
+    </div>
+</body>
+</html>
